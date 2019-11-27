@@ -1,7 +1,7 @@
-define(['jquery', '../server/main', './modules/glass', './modules/cartStorage'],
-    function ($, { getDetailData }, { glassInit }, { addCartStorage }) {
-
-
+define(['jquery', '../server/main', './modules/glass', './modules/cartStorage', './modules/lazy', './index'],
+    function ($, { getDetailData }, { glassInit }, { addCartStorage },  { shopInit }) {
+        shopInit()
+        // showImg()
         var type = window.location.search.match(/type=([^&]+)/)[1];
         var id = window.location.search.match(/id=([^&]+)/)[1];
         var $detail = $('#detail');
@@ -108,7 +108,8 @@ define(['jquery', '../server/main', './modules/glass', './modules/cartStorage'],
                     goodsNumber: Number($detail.find('.detail_message_num input').val()),
                     goodsColor: $detail.find('.detail_message_box').filter('.active').html(),  //找出带有active的
                     goodsId: data.goodsId,
-                    goodsChecked:true
+                    goodsChecked: true,
+                    goodsImg: data.goodsImg
                 };
 
                 addCartStorage(result, function () {
@@ -132,16 +133,19 @@ define(['jquery', '../server/main', './modules/glass', './modules/cartStorage'],
                     $alert.find('span').click(function () {
                         $alert.addClass('none')
                     })
-                    
+
                     var $back = $('#alert').find('.l')
                     $back.click(function () {
                         $alert.addClass('none')
                         $alert.addClass('')
-                        
+
                     })
                     // alert('dsdsa')
                 });
             })
         }
 
+
+// shopInit()
+//         showImg()
     });

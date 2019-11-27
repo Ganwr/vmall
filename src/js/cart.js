@@ -1,4 +1,4 @@
-define(['jquery', './modules/cartStorage'], function ($, { setCartStorage, getCartStorage }) {
+define(['jquery', './modules/cartStorage','./index'], function ($, { setCartStorage, getCartStorage }) {
 
     var $cart = $('#cart');
     var $cart_list = $cart.find('.cart_list');
@@ -6,6 +6,7 @@ define(['jquery', './modules/cartStorage'], function ($, { setCartStorage, getCa
     var cartList = []
     cartInit()
     cartBind()
+    // shopInit()
     function cartInit() {
         cartList = getCartStorage() || [];
 
@@ -118,4 +119,5 @@ define(['jquery', './modules/cartStorage'], function ($, { setCartStorage, getCa
 
 
     }
+    
 })

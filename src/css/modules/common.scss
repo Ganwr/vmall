@@ -115,14 +115,14 @@ body {
     height: 100%;
     .top_menu_left {
       width: 600px;
-      height:36px;
+      height: 36px;
       float: left;
       li {
         float: left;
         // width:30px;
-        padding-top:10px;
+        padding-top: 10px;
         // line-height: 36px;
-        >a {
+        > a {
           font-size: 12px;
           padding: 0 10px;
           border-right: 1px solid $default_color;
@@ -131,92 +131,121 @@ body {
           border: none;
         }
       }
-      .last_li{
-        height:26px;
+      .last_li {
+        height: 26px;
         position: relative;
-  
-        &:hover{
-          background:white;
+        &:hover {
+          background: white;
         }
-        >div{
-          display:none;
+        > div {
+          display: none;
           position: absolute;
-          top:36px;
-          left:-40px;
+          top: 36px;
+          left: -40px;
           width: 120px;
           height: 150px;
-          background: white;z-index: 100;
-          border-radius:10px 0 10px 10px;
-         
-          p{
-          //  background:pink;
-           text-align: center;
-           height:30px;
-          padding-top: 8px;
+          background: white;
+          z-index: 100;
+          border-radius: 10px 0 10px 10px;
+
+          p {
+            //  background:pink;
+            text-align: center;
+            height: 30px;
+            padding-top: 8px;
           }
         }
-        &:hover >div{
+        &:hover > div {
           display: block;
-         
         }
       }
     }
 
-    .top_menu_right{
-      height:36px;
-      width: 480px;
-     float: right;
-    //  background:pink;
-      li{
+    .top_menu_right {
+      height: 36px;
+      width: 500px;
+      float: right;
+      //  background:pink;
+      li {
         float: left;
         padding-top: 10px;
-        >a{
+        > a {
           font-size: 12px;
           padding: 0 10px;
           display: inline-block;
           // line-height: 36px;
           border-right: 1px solid $default_color;
         }
-        .first,.last{
-          border:none;
+        .first,
+        .last {
+          border: none;
         }
       }
-      .kf{
-        height:26px;
+      .kf {
+        height: 26px;
         position: relative;
-        &:hover{
+        &:hover {
           background: white;
         }
-        >div{
-          display:none;
+        > div {
+          display: none;
           position: absolute;
-          top:36px;
-          left:0px;
+          top: 36px;
+          left: 0px;
           width: 80px;
           height: 82px;
-          background: white;z-index: 100;
-          border-radius:0 0 10px 10px;
-          p{
+          background: white;
+          z-index: 100;
+          border-radius: 0 0 10px 10px;
+          p {
             text-align: center;
-            height:30px;
-           padding-top: 8px;
+            height: 30px;
+            padding-top: 8px;
           }
         }
-        &:hover .kf_{
+        &:hover .kf_ {
           display: block;
         }
       }
+      .shop {
+        position: relative;
+        background:rgba(236, 230, 231, 0.596);
+        height: 26px;
+        &:hover{
+          background:white;
+          
+        }
+        &:hover .shopping{
+          display: block;
+          
+        }
+        .shopping {
+          display: none;
+          position: absolute;
+          border-radius:0 0 20px 20px;
+          right: 0;
+          top:36px;
+          background: white;
+          width: 300px;
+          overflow: hidden;
+          // height: 100px;
+          z-index: 100;
+          img{
+            height:50px;
+            height:50px;
+            padding:10px;
+            float: left;
+          }
+          p{
+            padding:10px;
+          text-align: right;
+        }
 
-
-
-
+        }
+      }
     }
   }
 }
-
-
-
-
 
 //头
 #head {

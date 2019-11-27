@@ -1,4 +1,5 @@
 define(['jquery'], function ($) {
+   
     function goodsInit(type, data) {
         // console.log(type,data)
         var $parent = $(`#${type}`);
@@ -12,7 +13,7 @@ define(['jquery'], function ($) {
                 return `
              <li>
                  <a href="./detail.html?type=${type}&id=${v.goodsId}" target="_blank">
-                     <div><img src="${v.goodsImg}" alt=""></div>
+                     <div><img data-src="${v.goodsImg}" alt=""></div>
                      <h3>${v.goodsName}</h3>
                      <p>￥${v.goodsPrice}</p>
                  </a>
@@ -31,7 +32,7 @@ define(['jquery'], function ($) {
                 return `
              <li>
                  <a href="./detail.html?type=${type}&id=${v.goodsId}" target="_blank">
-                     <div><img src="${v.goodsImg}" alt=""></div>
+                     <div><img data-src="${v.goodsImg}" alt=""></div>
                      <h3>${v.goodsName}</h3>
                      <p>￥${v.goodsPrice}</p>
                  </a>

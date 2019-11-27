@@ -1,7 +1,8 @@
-define(['jquery', '../server/main', './modules/banner', './modules/goods'],
-    function ($, { getBannerData, getGoodsData }, { bannerInit }, { goodsInit }) { //{} 接收接口
+define(['jquery', '../server/main', './modules/banner', './modules/goods', './modules/cartStorage','./modules/lazy' ],
+    function ($, { getBannerData, getGoodsData }, { bannerInit }, { goodsInit }, { getCartStorage },{showImg}) { //{} 接收接口
 
-
+    showImg()
+;
         //首页Banner 操作
         getBannerData().then(function (res) {   //then 成功之后触发
             bannerInit(res);
@@ -21,9 +22,39 @@ define(['jquery', '../server/main', './modules/banner', './modules/goods'],
         })
 
         topClose()
-  
+        shopInit()
+
+
+
+        //购物车下拉菜单
+        function shopInit() {
+            var cartList = []
+            cartList = getCartStorage() || [];
+
+            var $shopping = $('.shopping');
+            var $last = $('.shop_last')
+            var tmp = `${
+                cartList.map((v, i) => {
+                    return `         
+            <img data-src="${v.goodsImg}" alt="">
+            <p>${v.goodsName}&nbsp;&nbsp;${v.goodsColor}</p>
+            <p>￥${v.goodsPrice}&nbsp;&nbsp;&nbsp;×${v.goodsNumber}</p>
+            <hr>
+            `
+                })
+                }`;
+
+            var tmp0 = `<i class="iconfont icon-icon-test"></i>购物车(${cartList.length})    `
+
+            $shopping.html(tmp)
+            $last.html(tmp0)
+
+
+        }
+        return { shopInit }
     })
 //顶部广告
+
 function topClose() {
 
     $top = $('.top');
@@ -32,5 +63,5 @@ function topClose() {
     $top_close.on('click', $top, function () {
         $top.attr('class', 'none')
     })
-
 }
+

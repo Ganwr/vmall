@@ -4,7 +4,7 @@ define(['jquery'], function ($) {    //引入模块 （）里分别对应4个文
     var $banner_dots = $('#banner').find('.banner_dots');
     var $next = $('.right')
     var $prev = $('.left')
-    console.log($prev)
+    
 
     function bannerInit(data) {   //接收后端数据的
         // console.log(data)
@@ -13,11 +13,11 @@ define(['jquery'], function ($) {    //引入模块 （）里分别对应4个文
         ${
             banner_list.map((v, i) => {
                 if (i == 0) {
-                    return ` <li class="active"><a href="${v.imgLink}"><img src="${v.imgUrl}" alt=""></a></li>`
+                    return ` <li class="active"><a href="${v.imgLink}"><img data-src="${v.imgUrl}" alt=""></a></li>`
                 }
                 else {
 
-                    return `<li><a href="${v.imgLink}"><img src="${v.imgUrl}" alt=""></a></li>`
+                    return `<li><a href="${v.imgLink}"><img data-src="${v.imgUrl}" alt=""></a></li>`
                 }
             }).join('')
             }
