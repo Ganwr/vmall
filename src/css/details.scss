@@ -1,0 +1,233 @@
+.none {
+  display: none;
+}
+#detail {
+  .detail_gallery {
+    width: 450px;
+    height: 450px;
+
+    .detail_gallery_normal {
+      // float: left;
+      // position: relative;
+      width: 450px;
+
+      height: 450px;
+      @extend #pos-0;
+      span {
+        @extend #pos-0;
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px #ccc solid;
+        display: none;
+        z-index: 999;
+      }
+      img {
+        background-image: none;
+        // z-index: 1;
+        position: absolute;
+        width: 450px;
+        height: 450px;
+        left: 0px;
+        top: 0px;
+        cursor: move;
+      }
+    }
+    .detail_gallery_large {
+      position: absolute;
+      left: 400px;
+      top: 0;
+      border: 1px black solid;
+      width: 350px;
+      height: 350px;
+      overflow: hidden;
+      display: none;
+      background: white;
+      z-index: 1;
+      img {
+        @extend #pos-0;
+      }
+    }
+  }
+  .detail_message {
+    left: 500px;
+    position: absolute;
+    min-height: 462px;
+    height: auto;
+    padding-bottom: 104px;
+    h2 {
+      font-size: 30px;
+      margin: 30px 10px;
+    }
+    p {
+      margin: 30px 10px;
+      display: flex;
+      align-items: center;
+      .detail_message_price {
+        font-size: 30px;
+        color: red;
+        margin-left: 30px;
+      }
+      .detail_message_box {
+        border: 1px red solid;
+        padding: 5px 10px;
+        margin-left: 30px;
+        cursor: pointer;
+      }
+      .active {
+        border: 2px red solid;
+        font-weight: bold;
+      }
+    }
+    .detail_message_num {
+      width: 60px;
+      height: 40px;
+      position: relative;
+      border: 1px #ccc solid;
+      margin: 30px 10px;
+      input {
+        width: 40px;
+        height: 100%;
+        text-align: center;
+        border: none;
+      }
+      span {
+        width: 20px;
+        text-align: center;
+        line-height: 20px;
+        position: absolute;
+        right: 0;
+        border-left: 1px #ccc solid;
+        font-weight: bold;
+        box-sizing: border-box;
+        cursor: pointer;
+        user-select: none;
+      }
+      span:first-of-type {
+        top: 0;
+        border-bottom: 1px #ccc solid;
+      }
+      span:last-of-type {
+        top: 20px;
+      }
+    }
+    .detail_message_cart,
+    .detail_message_computed {
+      width: 172px;
+      height: 40px;
+      background: #fc600c;
+      border-radius: 2px;
+      text-align: center;
+      line-height: 40px;
+      margin: 30px 10px;
+      a {
+        @extend #wh-100;
+        display: block;
+        color: #fff;
+      }
+    }
+    .detail_message_computed {
+      background: #ca151d;
+    }
+  }
+}
+
+#detailGoods {
+  h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font : {
+      size: 40px;
+      weight: bold;
+    }
+  }
+  img {
+    vertical-align: top;
+    width: 100%;
+    min-width: 1000px;
+  }
+}
+#alert {
+  // display:none;
+  .alert_wrap {
+    width: 100%;
+    height: 509304px;
+    z-index: 5000;
+    position: fixed !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 499;
+    opacity: 0.4;
+    background-color: #000;
+    visibility: visible;
+  }
+  .alert {
+    position: relative;
+    visibility: visible;
+    position: fixed;
+    top: 230px;
+    left: 35%;
+    z-index: 5000;
+    width: 500px;
+    height: 220px;
+    background: white;
+    .yes {
+      background: url(../static/icon-layer.png) no-repeat;
+      height: 30px;
+      width: 30px;
+      position: absolute;
+      left: 15px;
+      top: 50px;
+    }
+    .alert_top {
+      width: 100%;
+      height: 30px;
+      line-height: 30px;
+      span {
+        font-size: 50px;
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        user-select: none;
+      }
+    }
+    .content {
+      margin: 20px 20px 20px 50px;
+      color: #444;
+      font-size: 25px;
+      text-align: center;
+    }
+    .box_btn {
+      // background: pink;
+      margin: 0 auto;
+      height: 50px;
+      width: 400px;
+      // margin:0 auto;
+      a {
+        display: inline-block;
+        height: 100%;
+        width: 150px;
+        font-size: 20px;
+        line-height: 50px;
+        text-align: center;
+        color: #333;
+        border: 1px solid #ddd;
+      }
+      .r {
+        background: #ca151d;
+        color: white;
+      }
+    }
+  }
+}
+//     display: inline-block;
+// min-width: 170px;
+// height: 44px;
+// line-height: 44px;
+// border: 1px solid #ddd;
+// background: #fff;
+// font-size: 18px;
+// margin: 0 5px;
+// white-space: nowrap;
+// border-radius: 2px;
